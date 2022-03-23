@@ -12,7 +12,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/oliver006/redis_exporter/exporter"
+	"todis_exporter/exporter"
 )
 
 var (

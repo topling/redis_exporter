@@ -257,6 +257,171 @@ func NewRedisExporter(redisURI string, opts Options) (*Exporter, error) {
 			"server_threads":        "server_threads_total",
 			"long_lock_waits":       "long_lock_waits_total",
 			"current_client_thread": "current_client_thread",
+
+			// # Command_Exec_Count
+			"all_command_count":                      "all_command_count",
+
+			// # Keyspace
+			"used_db_size":                           "used_db_size",
+			"disk_capacity":                          "disk_capacity_bytes",
+			"used_disk_size":                         "used_disk_size",
+			"DBStrings_keys":                         "DBStrings_keys",
+			"DBHashes_keys":                          "DBHashes_keys",
+			"DBLists_keys":                           "DBLists_keys",
+			"DBZsets_keys":                           "DBZsets_keys",
+			"DBSets_keys":                            "DBSets_keys",
+
+			// # RocksDB
+			"strings_all_mem_tables":               "strings_all_mem_tables",
+			"strings_cur_mem_tables":               "strings_cur_mem_tables",
+			"strings_snapshots":                    "strings_snapshots",
+			"strings_num_immutable_mem_table":      "strings_num_immutable_mem_table",
+			"strings_num_running_flushes":          "strings_num_running_flushes",
+			"strings_mem_table_flush_pending":      "strings_mem_table_flush_pending",
+			"strings_compaction_pending":           "strings_compaction_pending",
+			"strings_num_running_compactions":      "strings_num_running_compactions",
+			"strings_num_live_versions":            "strings_num_live_versions",
+			"strings_current_super_version_number": "strings_current_super_version_number",
+			"strings_num_background_errors":        "strings_num_background_errors",
+
+			"hashes_all_mem_tables":                "hashes_all_mem_tables",
+			"hashes_cur_mem_tables":                "hashes_cur_mem_tables",
+			"hashes_snapshots":                     "hashes_snapshots",
+			"hashes_num_immutable_mem_table":       "hashes_num_immutable_mem_table",
+			"hashes_num_running_flushes":           "hashes_num_running_flushes",
+			"hashes_mem_table_flush_pending":       "hashes_mem_table_flush_pending",
+			"hashes_compaction_pending":            "hashes_compaction_pending",
+			"hashes_num_running_compactions":       "hashes_num_running_compactions",
+			"hashes_num_live_versions":             "hashes_num_live_versions",
+			"hashes_current_super_version_number":  "hashes_current_super_version_number",
+			"hashes_num_background_errors":         "hashes_num_background_errors",
+
+			"lists_all_mem_tables":                 "lists_all_mem_tables",
+			"lists_cur_mem_tables":                 "lists_cur_mem_tables",
+			"lists_snapshots":                      "lists_snapshots",
+			"lists_num_immutable_mem_table":        "lists_num_immutable_mem_table",
+			"lists_num_running_flushes":            "lists_num_running_flushes",
+			"lists_mem_table_flush_pending":        "lists_mem_table_flush_pending",
+			"lists_compaction_pending":             "lists_compaction_pending",
+			"lists_num_running_compactions":        "lists_num_running_compactions",
+			"lists_num_live_versions":              "lists_num_live_versions",
+			"lists_current_super_version_number":   "lists_current_super_version_number",
+			"lists_num_background_errors":          "lists_num_background_errors",
+
+			"zsets_all_mem_tables":                 "zsets_all_mem_tables",
+			"zsets_cur_mem_tables":                 "zsets_cur_mem_tables",
+			"zsets_snapshots":                      "zsets_snapshots",
+			"zsets_num_immutable_mem_table":        "zsets_num_immutable_mem_table",
+			"zsets_num_running_flushes":            "zsets_num_running_flushes",
+			"zsets_mem_table_flush_pending":        "zsets_mem_table_flush_pending",
+			"zsets_compaction_pending":             "zsets_compaction_pending",
+			"zsets_num_running_compactions":        "zsets_num_running_compactions",
+			"zsets_num_live_versions":              "zsets_num_live_versions",
+			"zsets_current_super_version_number":   "zsets_current_super_version_number",
+			"zsets_num_background_errors":          "zsets_num_background_errors",
+
+			"sets_all_mem_tables":                  "sets_all_mem_tables",
+			"sets_cur_mem_tables":                  "sets_cur_mem_tables",
+			"sets_snapshots":                       "sets_snapshots",
+			"sets_num_immutable_mem_table":         "sets_num_immutable_mem_table",
+			"sets_num_running_flushes":             "sets_num_running_flushes",
+			"sets_mem_table_flush_pending":         "sets_mem_table_flush_pending",
+			"sets_compaction_pending":              "sets_compaction_pending",
+			"sets_num_running_compactions":         "sets_num_running_compactions",
+			"sets_num_live_versions":               "sets_num_live_versions",
+			"sets_current_super_version_number":    "sets_current_super_version_number",
+			"sets_num_background_errors":           "sets_num_background_errors",
+
+			"strings_estimate_num_keys_default":                        "strings_estimate_num_keys_default",
+			"strings_estimate_table_readers_mem_default":               "strings_estimate_table_readers_mem_default",
+			"strings_level0_slowdown_default":                          "strings_level0_slowdown_default",
+			"strings_level0_numfiles_default":                          "strings_level0_numfiles_default",
+			"strings_slowdown_for_pending_compaction_bytes_default":    "strings_slowdown_for_pending_compaction_bytes_default",
+			"strings_stop_for_pending_compaction_bytes_default":        "strings_stop_for_pending_compaction_bytes_default",
+			"strings_memtable_slowdown_default":                        "strings_memtable_slowdown_default",
+			"strings_memtable_compaction_default":                      "strings_memtable_compaction_default",
+
+			"hashes_estimate_num_keys_default":                         "hashes_estimate_num_keys_default",
+			"hashes_estimate_table_readers_mem_default":                "hashes_estimate_table_readers_mem_default",
+			"hashes_level0_slowdown_default":                           "hashes_level0_slowdown_default",
+			"hashes_level0_numfiles_default":                           "hashes_level0_numfiles_default",
+			"hashes_slowdown_for_pending_compaction_bytes_default":     "hashes_slowdown_for_pending_compaction_bytes_default",
+			"hashes_stop_for_pending_compaction_bytes_default":         "hashes_stop_for_pending_compaction_bytes_default",
+			"hashes_memtable_slowdown_default":                         "hashes_memtable_slowdown_default",
+			"hashes_memtable_compaction_default":                       "hashes_memtable_compaction_default",
+
+			"hashes_estimate_num_keys_data_cf":                         "hashes_estimate_num_keys_data_cf",
+			"hashes_estimate_table_readers_mem_data_cf":                "hashes_estimate_table_readers_mem_data_cf",
+			"hashes_level0_slowdown_data_cf":                           "hashes_level0_slowdown_data_cf",
+			"hashes_level0_numfiles_data_cf":                           "hashes_level0_numfiles_data_cf",
+			"hashes_slowdown_for_pending_compaction_bytes_data_cf":     "hashes_slowdown_for_pending_compaction_bytes_data_cf",
+			"hashes_stop_for_pending_compaction_bytes_data_cf":         "hashes_stop_for_pending_compaction_bytes_data_cf",
+			"hashes_memtable_slowdown_data_cf":                         "hashes_memtable_slowdown_data_cf",
+			"hashes_memtable_compaction_data_cf":                       "hashes_memtable_compaction_data_cf",
+
+			"lists_estimate_num_keys_default":                          "lists_estimate_num_keys_default",
+			"lists_estimate_table_readers_mem_default":                 "lists_estimate_table_readers_mem_default",
+			"lists_level0_slowdown_default":                            "lists_level0_slowdown_default",
+			"lists_level0_numfiles_default":                            "lists_level0_numfiles_default",
+			"lists_slowdown_for_pending_compaction_bytes_default":      "lists_slowdown_for_pending_compaction_bytes_default",
+			"lists_stop_for_pending_compaction_bytes_default":          "lists_stop_for_pending_compaction_bytes_default",
+			"lists_memtable_slowdown_default":                          "lists_memtable_slowdown_default",
+			"lists_memtable_compaction_default":                        "lists_memtable_compaction_default",
+
+			"lists_estimate_num_keys_data_cf":                          "lists_estimate_num_keys_data_cf",
+			"lists_estimate_table_readers_mem_data_cf":                 "lists_estimate_table_readers_mem_data_cf",
+			"lists_level0_slowdown_data_cf":                            "lists_level0_slowdown_data_cf",
+			"lists_level0_numfiles_data_cf":                            "lists_level0_numfiles_data_cf",
+			"lists_slowdown_for_pending_compaction_bytes_data_cf":      "lists_slowdown_for_pending_compaction_bytes_data_cf",
+			"lists_stop_for_pending_compaction_bytes_data_cf":          "lists_stop_for_pending_compaction_bytes_data_cf",
+			"lists_memtable_slowdown_data_cf":                          "lists_memtable_slowdown_data_cf",
+			"lists_memtable_compaction_data_cf":                        "lists_memtable_compaction_data_cf",
+
+
+			"sets_estimate_num_keys_default":                           "sets_estimate_num_keys_default",
+			"sets_estimate_table_readers_mem_default":                  "sets_estimate_table_readers_mem_default",
+			"sets_level0_slowdown_default":                             "sets_level0_slowdown_default",
+			"sets_level0_numfiles_default":                             "sets_level0_numfiles_default",
+			"sets_slowdown_for_pending_compaction_bytes_default":       "sets_slowdown_for_pending_compaction_bytes_default",
+			"sets_stop_for_pending_compaction_bytes_default":           "sets_stop_for_pending_compaction_bytes_default",
+			"sets_memtable_slowdown_default":                           "sets_memtable_slowdown_default",
+			"sets_memtable_compaction_default":                         "sets_memtable_compaction_default",
+
+			"sets_estimate_num_keys_data_cf":                           "sets_estimate_num_keys_data_cf",
+			"sets_estimate_table_readers_mem_data_cf":                  "sets_estimate_table_readers_mem_data_cf",
+			"sets_level0_slowdown_data_cf":                             "sets_level0_slowdown_data_cf",
+			"sets_level0_numfiles_data_cf":                             "sets_level0_numfiles_data_cf",
+			"sets_slowdown_for_pending_compaction_bytes_data_cf":       "sets_slowdown_for_pending_compaction_bytes_data_cf",
+			"sets_stop_for_pending_compaction_bytes_data_cf":           "sets_stop_for_pending_compaction_bytes_data_cf",
+			"sets_memtable_slowdown_data_cf":                           "sets_memtable_slowdown_data_cf",
+			"sets_memtable_compaction_data_cf":                         "sets_memtable_compaction_data_cf",
+
+			"zsets_estimate_num_keys_default":                          "zsets_estimate_num_keys_default",
+			"zsets_estimate_table_readers_mem_default":                 "zsets_estimate_table_readers_mem_default",
+			"zsets_level0_slowdown_default":                            "zsets_level0_slowdown_default",
+			"zsets_level0_numfiles_default":                            "zsets_level0_numfiles_default",
+			"zsets_slowdown_for_pending_compaction_bytes_default":      "zsets_slowdown_for_pending_compaction_bytes_default",
+			"zsets_stop_for_pending_compaction_bytes_default":          "zsets_stop_for_pending_compaction_bytes_default",
+			"zsets_memtable_slowdown_default":                          "zsets_memtable_slowdown_default",
+			"zsets_memtable_compaction_default":                        "zsets_memtable_compaction_default",
+
+			"zsets_estimate_num_keys_data_cf":                          "zsets_estimate_num_keys_data_cf",
+			"zsets_estimate_table_readers_mem_data_cf":                 "zsets_estimate_table_readers_mem_data_cf",
+			"zsets_level0_slowdown_data_cf":                            "zsets_level0_slowdown_data_cf",
+			"zsets_level0_numfiles_data_cf":                            "zsets_level0_numfiles_data_cf",
+			"zsets_slowdown_for_pending_compaction_bytes_data_cf":      "zsets_slowdown_for_pending_compaction_bytes_data_cf",
+			"zsets_stop_for_pending_compaction_bytes_data_cf":          "zsets_stop_for_pending_compaction_bytes_data_cf",
+			"zsets_memtable_slowdown_data_cf":                          "zsets_memtable_slowdown_data_cf",
+			"zsets_memtable_compaction_data_cf":                        "zsets_memtable_compaction_data_cf",
+
+			"zsets_estimate_num_keys_score_cf":                         "zsets_estimate_num_keys_score_cf",
+			"zsets_estimate_table_readers_mem_score_cf":                "zsets_estimate_table_readers_mem_score_cf",
+			"zsets_level0_slowdown_score_cf":                           "zsets_level0_slowdown_score_cf",
+			"zsets_level0_numfiles_score_cf":                           "zsets_level0_numfiles_score_cf",
+			"zsets_slowdown_for_pending_compaction_bytes_score_cf":     "zsets_slowdown_for_pending_compaction_bytes_score_cf",
+			"zsets_stop_for_pending_compaction_bytes_score_cf":         "zsets_stop_for_pending_compaction_bytes_score_cf",
+			"zsets_memtable_slowdown_score_cf":                         "zsets_memtable_slowdown_score_cf",
+			"zsets_memtable_compaction_score_cf":                       "zsets_memtable_compaction_score_cf",
 		},
 
 		metricMapCounters: map[string]string{
@@ -548,12 +713,6 @@ func (e *Exporter) scrapeRedisHost(ch chan<- prometheus.Metric) error {
 		}
 	}
 
-	if e.options.SetClientName {
-		if _, err := doRedisCmd(c, "CLIENT", "SETNAME", "redis_exporter"); err != nil {
-			log.Errorf("Couldn't set client name, err: %s", err)
-		}
-	}
-
 	dbCount := 0
 	if config, err := redis.Strings(doRedisCmd(c, e.options.ConfigCommandName, "GET", "*")); err == nil {
 		log.Debugf("Redis CONFIG GET * result: [%#v]", config)
@@ -596,8 +755,6 @@ func (e *Exporter) scrapeRedisHost(ch chan<- prometheus.Metric) error {
 	log.Debugf("dbCount: %d", dbCount)
 
 	e.extractInfoMetrics(ch, infoAll, dbCount)
-
-	e.extractLatencyMetrics(ch, c)
 
 	if e.options.IsCluster {
 		clusterClient, err := e.connectToRedisCluster()
