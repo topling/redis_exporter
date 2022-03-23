@@ -1,4 +1,23 @@
 # Prometheus Redis Metrics Exporter
+Prometheus exporter for Todis metrics.
+
+## Building and running the exporter
+
+### Build and run locally
+
+```sh
+git clone https://github.com/topling/todis_exporter.git
+cd todis_exporter
+go build .
+./redis_exporter --version
+```
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+The following is the original content
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Prometheus Redis Metrics Exporter
 
 [![Build Status](https://cloud.drone.io/api/badges/oliver006/redis_exporter/status.svg)](https://cloud.drone.io/oliver006/redis_exporter)
  [![Coverage Status](https://coveralls.io/repos/github/oliver006/redis_exporter/badge.svg?branch=master)](https://coveralls.io/github/oliver006/redis_exporter?branch=master) [![codecov](https://codecov.io/gh/oliver006/redis_exporter/branch/master/graph/badge.svg)](https://codecov.io/gh/oliver006/redis_exporter) [![docker_pulls](https://img.shields.io/docker/pulls/oliver006/redis_exporter.svg)](https://img.shields.io/docker/pulls/oliver006/redis_exporter.svg)
