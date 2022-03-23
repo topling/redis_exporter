@@ -9,7 +9,7 @@ Prometheus exporter for Todis metrics.
 git clone https://github.com/topling/todis_exporter.git
 cd todis_exporter
 go build .
-./redis_exporter --version
+./todis_exporter --version
 ```
 
 
