@@ -1,4 +1,4 @@
-# Prometheus Redis Metrics Exporter
+# Prometheus Todis Metrics Exporter
 Prometheus exporter for Todis metrics.
 
 ## Building and running the exporter
