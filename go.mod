@@ -1,4 +1,4 @@
-module github.com/oliver006/redis_exporter
+module todis_exporter
 
 go 1.13
 
